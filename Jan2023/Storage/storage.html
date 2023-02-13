@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id = "txtUname" placeholder = "Enter a name"/>
+    </div>
+    <div>
+        <input type="button" onclick="createSession()" value = "Create Session"/> 
+        <input type="button" onclick="getSession()" value = "Read Session"/> 
+        <input type="button" onclick="deleteSession()" value = "Delete Session"/> 
+    </div>
+    <script>
+        function createSession(){
+            let x = document.querySelector('#txtUname').value;
+            sessionStorage.setItem("uname", x);
+        }
+        function getSession(){
+            let x = sessionStorage.getItem("uname");
+            console.log(x);
+        }
+        function deleteSession(){
+            sessionStorage.removeItem("uname");
+        }
+
+
+        
+        function createLocal(){
+            let x = document.querySelector('#txtUname').value;
+            localStorage.setItem("uname", x);
+        }
+        function getLocal(){
+            let x = localStorage.getItem("uname");
+            console.log(x);
+        }
+        function deleteLocal(){
+            localStorage.removeItem("uname");
+        }
+    </script>
+</body>
+</html>

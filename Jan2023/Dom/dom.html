@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            padding: 5px, 10px;
+            border : none;
+        }
+        .btn-primary{
+            background-color: rgb(53, 177, 219);
+            color: white;
+        }
+        .btn-danger{
+            background-color: red;
+            color: white;
+        }
+        .form-control {
+            display: block;
+            padding: 5px 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <script src = dom.js></script>
+
+    <script>
+        function createCookie(){
+            let x = document.querySelector("#username").value;
+            document.cookie = "name=" +btoa(x) + ";expires=" + new Date(2100, 0, 1).toUTCString();//BTOA is encrpytion
+            console.log("Created Cookie");
+        }
+        function readCookie(){
+            //regEx for multiple cookies
+            let x = document.cookie.split(/=|;/)[1];
+            console.log(atob(x));
+        }
+    </script>
+
+    <div class = "content">
+        <div class = "form-control">
+            <input type = "text" id = "username" placeholder = "Enter Username"/>
+
+        </div>
+        <input type = "button" value = "Create Cookie" class = "btn btn-primary" onclick = "createCookie()"/> 
+        <input type = "button" value = "Read Cookie" class = "btn btn-danger" onclick = "readCookie()"/> 
+    </div>
+</body>
+</html>
